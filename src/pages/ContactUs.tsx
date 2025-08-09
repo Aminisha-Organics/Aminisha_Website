@@ -38,9 +38,9 @@ const sendEmail = async () => {
   setIsSubmitting(true);
   setSubmitStatus('idle');
 
-  const serviceId = 'service_ruk981h';
-  const templateId = 'template_1s8yn8n';
-  const publicKey = 'Cjhuqw5Qd1aozy-6j';
+  const serviceId = 'service_n822hk3';
+  const templateId = 'template_lpduxwc';
+  const publicKey = 'qE3jvjmyCoOle_TxM';
 
   const templateParams = {
     name: formData.name,
