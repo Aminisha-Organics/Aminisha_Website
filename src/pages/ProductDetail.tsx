@@ -33,10 +33,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     { property: 'Density', value: currentProduct.density },
     { property: 'Solubility', value: 'Highly soluble in water' },
     { property: 'Appearance', value: 'White crystalline powder' },
-    { property: 'Purity', value: '≥ 98.0%' },
-    { property: 'pH (1% solution)', value: '3.0 - 4.0' },
-    { property: 'Heavy Metals', value: '≤ 10 ppm' },
-    { property: 'Iron', value: '≤ 5 ppm' }
+    { property: 'Purity',value: product === 'ammonium' ? '≥ 98.0%' : '≥ 98.5%'},
+    { property: 'pH (10% solution)', value: '3.0 - 4.0' },
+    { property: 'Iron', value: product === 'ammonium' ? '0.0005% w/w max' : '0.001% w/w max'},
+    { property: 'Chloride and chlorate (as CL)', value: product === 'ammonium' ? '0.002% w/w max' : '0.005% w/w max'},
+    { property: 'Moisture', value: product === 'ammonium' ? '0.10% w/w max' :'	0.05% w/w max' },
   ];
 
   const applications = [
@@ -147,10 +148,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {specifications.map((spec, index) => (
+                    currentProduct.name === 'Sodium Persulfate' && spec.property === 'pH (10% solution)' ? null : (
                     <tr key={index} className="hover:bg-gray-50">
                       <td className="px-6 py-4 text-sm text-gray-900">{spec.property}</td>
                       <td className="px-6 py-4 text-sm text-gray-600">{spec.value}</td>
                     </tr>
+                    )
                   ))}
                 </tbody>
               </table>

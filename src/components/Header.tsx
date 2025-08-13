@@ -59,21 +59,26 @@ const Header: React.FC = () => {
               </Link>
               
               {/* Products Dropdown */}
-              <div className="relative">
+              <div
+                className="relative"
+                onMouseEnter={() => setIsProductsOpen(true)}
+                onMouseLeave={() => setIsProductsOpen(false)}
+              >
                 <button
-                  onMouseEnter={() => setIsProductsOpen(true)}
-                  onMouseLeave={() => setIsProductsOpen(false)}
                   className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${location.pathname.includes('/products') ? 'text-blue-600' : ''}`}
                 >
-                  <span>Products</span>
+                  <span><Link 
+                to="/products" 
+                className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${isActive('/about') ? 'text-blue-600' : ''}`}
+              >
+                About Us
+              </Link></span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 
                 {isProductsOpen && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl z-50 py-4"
-                    onMouseEnter={() => setIsProductsOpen(true)}
-                    onMouseLeave={() => setIsProductsOpen(false)}
                   >
                     <Link 
                       to="/products/ammonium-persulfate" 
