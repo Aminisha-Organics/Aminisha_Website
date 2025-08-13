@@ -67,34 +67,37 @@ const Header: React.FC = () => {
                 <button
                   className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${location.pathname.includes('/products') ? 'text-blue-600' : ''}`}
                 >
-                  <span><Link 
-                to="/products" 
-                className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${isActive('/about') ? 'text-blue-600' : ''}`}
-              >
-                About Us
-              </Link></span>
+                  <span>
+                    <Link
+                      to="/products"
+                      className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${isActive('/about') ? 'text-blue-600' : ''}`}
+                    >
+                      Products
+                    </Link>
+                  </span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
-                
+
                 {isProductsOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl z-50 py-4"
+                  <div
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 z-50 py-2"
                   >
-                    <Link 
-                      to="/products/ammonium-persulfate" 
-                      className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    <Link
+                      to="/products/ammonium-persulfate"
+                      className="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors rounded-lg"
                     >
                       Ammonium Persulfate
                     </Link>
-                    <Link 
-                      to="/products/sodium-persulfate" 
-                      className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    <Link
+                      to="/products/sodium-persulfate"
+                      className="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors rounded-lg"
                     >
                       Sodium Persulfate
                     </Link>
                   </div>
                 )}
               </div>
+
 
               <Link 
                 to="/certifications" 
