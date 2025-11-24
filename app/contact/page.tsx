@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 export const metadata = {
   title: "Contact Us | Aminisha Organics LLP",
   description:
@@ -9,5 +11,9 @@ export const metadata = {
 
 import Contact from "./contact";
 export default function Page() {
-  return <Contact />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Contact />
+    </Suspense>
+  );
 }
