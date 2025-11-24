@@ -252,35 +252,4 @@ const sendEmail = async () => {
   );
 };
 
-export const metadata = {
-  title: "Contact Us | Aminisha Organics LLP",
-  description:
-    "Get in touch with Aminisha Organics LLP. Contact us for product inquiries, partnerships, technical details, or general support.",
-  openGraph: {
-    title: "Contact Us | Aminisha Organics LLP",
-    description:
-      "Reach out to Aminisha Organics LLP for quotes, product information, collaboration opportunities, or general inquiries.",
-    url: "https://www.aminishaorganics.com/contact",
-    siteName: "Aminisha Organics LLP",
-    images: [
-      {
-        url: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Us | Aminisha Organics LLP",
-    description:
-      "Contact Aminisha Organics LLP for inquiries, product support, or business collaborations.",
-    images: [
-      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    ],
-  },
-};
-
-
 export default ContactUs;
