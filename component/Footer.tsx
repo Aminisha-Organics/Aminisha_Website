@@ -44,8 +44,8 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Products</h4>
             <ul className="space-y-2">
-              <li><Link href="/products/ammonium-persulfate?product=ammonium" className="text-gray-300 hover:text-white transition-colors">Ammonium persulfate</Link></li>
-              <li><Link href="/products/sodium-persulfate?product=sodium" className="text-gray-300 hover:text-white transition-colors">Sodium Persulfates</Link></li>
+              <li><Link href="/products/ammonium-persulfate" className="text-gray-300 hover:text-white transition-colors">Ammonium persulfate</Link></li>
+              <li><Link href="/products/sodium-persulfate" className="text-gray-300 hover:text-white transition-colors">Sodium Persulfates</Link></li>
             </ul>
           </div>
 

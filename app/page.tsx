@@ -250,7 +250,7 @@ const Home: React.FC = () => {
                   in many applications.
                 </p>
                 <Link
-                  href="/products/ammonium-persulfate?product=ammonium"
+                  href="/products/ammonium-persulfate"
                   className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
@@ -278,7 +278,7 @@ const Home: React.FC = () => {
                   agent in many applications.
                 </p>
                 <Link
-                  href="/products/sodium-persulfate?product=sodium"
+                  href="/products/sodium-persulfate"
                   className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
