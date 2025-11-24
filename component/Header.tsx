@@ -1,5 +1,9 @@
+"use client";
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+
 import {
   ChevronDown,
   Phone,
@@ -15,9 +19,9 @@ import {
 const Header: React.FC = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: String) => pathname === path;
 
   return (
     <>
@@ -39,26 +43,28 @@ const Header: React.FC = () => {
 
       {/* Main Header */}
       <header className="bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-              <img
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
                 src="/Logo/Aminisha short Logo.png"
                 alt="Aminisha Organics"
                 className="w-12 h-12 rounded-full object-cover"
+                width={48}
+                height={48}
               />
               <div>
-                <h1 className="text-md font-bold text-green-600">
+                <h2 className="text-md font-bold text-green-600">
                   Aminisha <br></br>Organics
-                </h1>
+                </h2>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               <Link
-                to="/"
+                href="/"
                 className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${
                   isActive("/") ? "text-blue-600" : ""
                 }`}
@@ -66,7 +72,7 @@ const Header: React.FC = () => {
                 Home
               </Link>
               <Link
-                to="/about"
+                href="/about"
                 className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${
                   isActive("/about") ? "text-blue-600" : ""
                 }`}
@@ -82,7 +88,7 @@ const Header: React.FC = () => {
               >
                 <button
                   className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${
-                    location.pathname.includes("/products")
+                    pathname.includes("/products")
                       ? "text-blue-600"
                       : ""
                   }`}
@@ -100,13 +106,13 @@ const Header: React.FC = () => {
                 {isProductsOpen && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl z-50 py-4">
                     <Link
-                      to="/products/ammonium-persulfate"
+                      href="/products/ammonium-persulfate?product=ammonium"
                       className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     >
                       Ammonium Persulfate
                     </Link>
                     <Link
-                      to="/products/sodium-persulfate"
+                      href="/products/sodium-persulfate?product=sodium"
                       className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     >
                       Sodium Persulfate
@@ -116,7 +122,7 @@ const Header: React.FC = () => {
               </div>
 
               <Link
-                to="/certifications"
+                href="/certifications"
                 className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${
                   isActive("/certifications") ? "text-blue-600" : ""
                 }`}
@@ -124,7 +130,7 @@ const Header: React.FC = () => {
                 Certifications
               </Link>
               <Link
-                to="/contact"
+                href="/contact"
                 className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${
                   isActive("/contact") ? "text-blue-600" : ""
                 }`}
@@ -157,7 +163,7 @@ const Header: React.FC = () => {
             <div className="lg:hidden mt-4 border-t pt-4">
               <nav className="flex flex-col space-y-4">
                 <Link
-                  to="/"
+                  href="/"
                   className={`text-gray-700 hover:text-blue-600 transition-colors font-medium ${
                     isActive("/") ? "text-blue-600" : ""
                   }`}
@@ -166,7 +172,7 @@ const Header: React.FC = () => {
                   Home
                 </Link>
                 <Link
-                  to="/about"
+                  href="/about"
                   className={`text-gray-700 hover:text-blue-600 transition-colors font-medium ${
                     isActive("/about") ? "text-blue-600" : ""
                   }`}
@@ -175,21 +181,21 @@ const Header: React.FC = () => {
                   About Us
                 </Link>
                 <Link
-                  to="/products/ammonium-persulfate"
+                  href="/products/ammonium-persulfate?product=ammonium"
                   className="text-gray-700 hover:text-blue-600 transition-colors font-medium pl-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Ammonium Persulfate
                 </Link>
                 <Link
-                  to="/products/sodium-persulfate"
+                  href="/products/sodium-persulfate?product=sodium"
                   className="text-gray-700 hover:text-blue-600 transition-colors font-medium pl-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Sodium Persulfate
                 </Link>
                 <Link
-                  to="/certifications"
+                  href="/certifications"
                   className={`text-gray-700 hover:text-blue-600 transition-colors font-medium ${
                     isActive("/certifications") ? "text-blue-600" : ""
                   }`}
@@ -198,7 +204,7 @@ const Header: React.FC = () => {
                   Certifications
                 </Link>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className={`text-gray-700 hover:text-blue-600 transition-colors font-medium ${
                     isActive("/contact") ? "text-blue-600" : ""
                   }`}
