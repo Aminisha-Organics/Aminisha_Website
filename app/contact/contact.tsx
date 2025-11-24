@@ -166,7 +166,7 @@ const sendEmail = async () => {
                   <select
                     name="product"
                     value={formData.product}
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e: any) => handleChange(e)}
                     className="w-full px-3 py-2 bg-white border rounded-md text-sm transition-colors duration-300 ease-in-out focus:border-blue-500 focus:ring-0"
                   >
                     <option value="" disabled>Select Product (Optional)</option>
