@@ -7,13 +7,24 @@ import Image from "next/image";
 
 const ProductDetail: React.FC = () => {
   const searchParams = useSearchParams();
-  let product: String | null = searchParams.get("product")?.toString();
+  let product: String | null | undefined = searchParams.get("product")?.toString();
   if (!product || (product !== 'ammonium' && product !== 'sodium')) {
     product = 'ammonium';
   }
 
-  const productData = {
-    ammonium: {
+  interface ProductType {
+  name: string;
+  formula: string;
+  density: string;
+  image: string;
+  description: string;
+  breadcrumb: string;
+}
+  
+  const productData: ProductType[] = [];
+
+  // const productData = {
+    let ammonium: ProductType = {
       name: 'Ammonium Persulfate (crystalline)',
       formula: '(NH₄)₂S₂O₈',
       density: '1.98 g/cc',
@@ -22,8 +33,8 @@ const ProductDetail: React.FC = () => {
       description:
         'Ammonium Persulfate is a white, crystalline, odourless salt used as an initiator for polymerization and as a strong oxidizing agent in many applications.',
       breadcrumb: 'Ammonium Persulfate'
-    },
-    sodium: {
+    }
+    let sodium: ProductType = {
       name: 'Sodium Persulfate (crystalline)',
       formula: 'Na₂S₂O₈',
       density: '2.59 g/cc',
@@ -33,9 +44,12 @@ const ProductDetail: React.FC = () => {
         'Sodium Persulfate is a white, crystalline, odourless salt used as an initiator for polymerization and as a strong oxidizing agent in many industries.',
       breadcrumb: 'Sodium Persulfate'
     }
-  };
+  // };
+  productData.push(ammonium);
+  productData.push(sodium);
 
-  const currentProduct = productData[product];
+  let ind = product === 'ammonium' ? 0 : 1;
+  const currentProduct = productData[ind];
 
   // Specifications
   const specifications = [
