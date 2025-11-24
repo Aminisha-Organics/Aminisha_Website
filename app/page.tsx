@@ -1,26 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ArrowRight, Award, Shield, Zap, Factory, Beaker, Truck, Building2, Cpu, Wrench, Users, HardHat, TreePine } from 'lucide-react';
+"use client";
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  Award,
+  Shield,
+  Zap,
+  Factory,
+  Beaker,
+  Truck,
+  Building2,
+  Cpu,
+  Wrench,
+  Users,
+  HardHat,
+  TreePine,
+} from "lucide-react";
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      image: "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
+      image:
+        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
       title: "Quality Chemical Solutions",
-      subtitle: "Leading manufacturer of specialty chemicals"
+      subtitle: "Leading manufacturer of specialty chemicals",
     },
     {
-      image: "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
+      image:
+        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
       title: "Advanced Manufacturing",
-      subtitle: "State-of-the-art production facilities"
+      subtitle: "State-of-the-art production facilities",
     },
     {
-      image: "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
+      image:
+        "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
       title: "Global Excellence",
-      subtitle: "Serving customers worldwide with quality products"
-    }
+      subtitle: "Serving customers worldwide with quality products",
+    },
   ];
 
   const industries = [
@@ -32,7 +53,7 @@ const Home: React.FC = () => {
     { name: "Industrial", icon: <Wrench className="w-8 h-8" /> },
     { name: "Oil & Gas", icon: <HardHat className="w-8 h-8" /> },
     { name: "Pharmaceuticals", icon: <Shield className="w-8 h-8" /> },
-    { name: "Polymer", icon: <Zap className="w-8 h-8" /> }
+    { name: "Polymer", icon: <Zap className="w-8 h-8" /> },
   ];
 
   useEffect(() => {
@@ -53,26 +74,30 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Carousel */}
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative h-screen min-h-screen overflow-hidden ">
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
+              index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover brightness-75"
+              width={1200}
+              height={600}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="bg-red-500 h-10 w-10"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white max-w-4xl px-4">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h1>
+                <h2 className="text-4xl md:text-6xl font-bold mb-4">
+                  {slide.title}
+                </h2>
                 <p className="text-xl md:text-2xl mb-8">{slide.subtitle}</p>
                 <Link
-                  to="/products"
+                  href="/products"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
                 >
                   <span>Our Products</span>
@@ -82,19 +107,19 @@ const Home: React.FC = () => {
             </div>
           </div>
         ))}
-        
-        {/* Navigation */}
+
+        {/* Carousel Navigation */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
+          className="absolute opacity-0 lg:opacity-100 left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-6 h-6 fill-black" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
+          className="absolute opacity-0 lg:opacity-100 right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-6 h-6 fill-black" />
         </button>
 
         {/* Indicators */}
@@ -104,7 +129,7 @@ const Home: React.FC = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
+                index === currentSlide ? "bg-white" : "bg-white bg-opacity-50"
               }`}
             />
           ))}
@@ -113,18 +138,24 @@ const Home: React.FC = () => {
 
       {/* Our Core Values */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Core Values
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
               <Shield className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Quality & Compliance System</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Quality & Compliance System
+              </h3>
             </div>
             <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
               <Users className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Customer Centricity</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Customer Centricity
+              </h3>
             </div>
             <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
               <Award className="w-12 h-12 mx-auto mb-4" />
@@ -136,23 +167,29 @@ const Home: React.FC = () => {
 
       {/* Company Overview */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img
+              <Image
                 src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
                 alt="Excellence Rating"
                 className="w-full rounded-lg"
+                width={1200}
+                height={600}
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Company Overview</h2>
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Overview Of Aminisha Organics LLP
+              </h1>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Aminisha Organics LLP an indian company dealing in specialty chemicals, has been developing, manufacturing & supplying Persulphate range of products to customers around the world.
+                Aminisha Organics LLP an indian company dealing in specialty
+                chemicals, has been developing, manufacturing & supplying
+                Persulphate range of products to customers around the world.
               </p>
               <div className="flex items-center space-x-4 mb-6">
-                <Link 
-                  to="/about"
+                <Link
+                  href="/about"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   READ MORE
@@ -171,12 +208,13 @@ const Home: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-16 bg-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            We’re always happy to connect with industry peers, supportive vendors, and creative researchers who see potential for synergy.
+            We’re always happy to connect with industry peers, supportive
+            vendors, and creative researchers who see potential for synergy.
           </h2>
           <Link
-            to="/contact"
+            href="/contact"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block mt-8"
           >
             CONTACT US
@@ -186,24 +224,33 @@ const Home: React.FC = () => {
 
       {/* Our Products */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Products</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Products
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img
+              <Image
                 src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
                 alt="Ammonium Persulfate"
                 className="w-full h-64 object-cover"
+                width={1200}
+                height={600}
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Ammonium Persulfate</h3>
+                <h3 className="text-xl font-semibold mb-3">
+                  Ammonium Persulfate
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Ammonium Persulfate is a white, crystalline, odourless salt with a density of 1.98 g/cc. It is used as an initiator for the polymerization of monomers and as a strong oxidizing agent in many applications.
+                  Ammonium Persulfate is a white, crystalline, odourless salt
+                  with a density of 1.98 g/cc. It is used as an initiator for
+                  the polymerization of monomers and as a strong oxidizing agent
+                  in many applications.
                 </p>
                 <Link
-                  to="/products/ammonium-persulfate"
+                  href="/products/ammonium-persulfate?product=ammonium"
                   className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
@@ -211,19 +258,27 @@ const Home: React.FC = () => {
                 </Link>
               </div>
             </div>
+
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img
+              <Image
                 src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
                 alt="Sodium Persulfate"
                 className="w-full h-64 object-cover"
+                width={1200}
+                height={600}
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Sodium Persulfate</h3>
+                <h3 className="text-xl font-semibold mb-3">
+                  Sodium Persulfate
+                </h3>
                 <p className="text-gray-600 mb-4">
-                  Sodium Persulfate is a white, crystalline, odourless salt or powder with the density of 2.59 g/cc. It is used as initiator for the Polymerization of monomers and as a strong oxidizing agent in many applications.
+                  Sodium Persulfate is a white, crystalline, odourless salt or
+                  powder with the density of 2.59 g/cc. It is used as initiator
+                  for the Polymerization of monomers and as a strong oxidizing
+                  agent in many applications.
                 </p>
                 <Link
-                  to="/products/sodium-persulfate"
+                  href="/products/sodium-persulfate?product=sodium"
                   className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
@@ -237,12 +292,12 @@ const Home: React.FC = () => {
 
       {/* CTA Products */}
       <section className="py-16 bg-blue-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             We're Delivering the Best Products & Solutions
           </h2>
           <Link
-            to="/products"
+            href="/products"
             className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-block mt-8"
           >
             OUR PRODUCTS
@@ -252,9 +307,11 @@ const Home: React.FC = () => {
 
       {/* Industries Served */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries Served</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Industries Served
+            </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
             {industries.map((industry, index) => (
@@ -262,7 +319,9 @@ const Home: React.FC = () => {
                 <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-600">
                   {industry.icon}
                 </div>
-                <h3 className="text-sm font-medium text-gray-700">{industry.name}</h3>
+                <h3 className="text-sm font-medium text-gray-700">
+                  {industry.name}
+                </h3>
               </div>
             ))}
           </div>

@@ -1,13 +1,13 @@
+"use client";
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from "next/link";
 import { Mail, Phone, MapPin, Send, Twitter, Facebook, Instagram, Linkedin, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
-
+import { useSearchParams } from "next/navigation";
 
 const ContactUs: React.FC = () => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const preSelectedProduct = searchParams.get('product') || '';
+  const searchParams = useSearchParams();
+  const preSelectedProduct = searchParams.get("product") || "";
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -69,14 +69,14 @@ const sendEmail = async () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-slate-800 text-white py-24">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Get in touch with us</h1>
             <p className="text-xl text-gray-300 mb-8">Get in touch with our team</p>
             <div className="flex items-center justify-center space-x-2 mt-8">
               <div className="bg-white rounded-lg px-6 py-3">
                 <nav className="flex items-center space-x-2 text-sm">
-                  <Link to="/" className="text-blue-600 hover:underline">Home</Link>
+                  <Link href="/" className="text-blue-600 hover:underline">Home</Link>
                   <span className="text-gray-400">/</span>
                   <span className="text-blue-600 font-medium">Contact Us</span>
                 </nav>
@@ -88,7 +88,7 @@ const sendEmail = async () => {
 
       {/* Contact Form & Info */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12" style={{alignItems: 'center'}}>
             {/* Contact Form */}
             <div>
@@ -237,7 +237,7 @@ const sendEmail = async () => {
 
       {/* Map Section */}
       <section className="py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="h-96">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3704.450035246981!2d72.81558237600568!3d21.801536160787453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f85add7072165%3A0xff2509edb8c8e0ed!2sAMINISHA%20ORGANICS%20LLP!5e0!3m2!1sen!2sin!4v1752825313187!5m2!1sen!2sin"
@@ -251,5 +251,36 @@ const sendEmail = async () => {
     </div>
   );
 };
+
+export const metadata = {
+  title: "Contact Us | Aminisha Organics LLP",
+  description:
+    "Get in touch with Aminisha Organics LLP. Contact us for product inquiries, partnerships, technical details, or general support.",
+  openGraph: {
+    title: "Contact Us | Aminisha Organics LLP",
+    description:
+      "Reach out to Aminisha Organics LLP for quotes, product information, collaboration opportunities, or general inquiries.",
+    url: "https://www.aminishaorganics.com/contact",
+    siteName: "Aminisha Organics LLP",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Aminisha Organics LLP",
+    description:
+      "Contact Aminisha Organics LLP for inquiries, product support, or business collaborations.",
+    images: [
+      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    ],
+  },
+};
+
 
 export default ContactUs;

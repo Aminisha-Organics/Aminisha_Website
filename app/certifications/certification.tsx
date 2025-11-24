@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from "next/link";
 import { Award, Shield, CheckCircle, Download, ExternalLink } from 'lucide-react';
 
 const Certifications: React.FC = () => {
@@ -36,14 +37,14 @@ const Certifications: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-slate-800 text-white py-24">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Certification</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Quality Certification</h1>
             <p className="text-xl text-gray-300 mb-8">Our commitment to excellence and quality standards</p>
             <div className="flex items-center justify-center space-x-2 mt-8">
               <div className="bg-white rounded-lg px-6 py-3">
                 <nav className="flex items-center space-x-2 text-sm">
-                  <Link to="/" className="text-blue-600 hover:underline">Home</Link>
+                  <Link href="/" className="text-blue-600 hover:underline">Home</Link>
                   <span className="text-gray-400">/</span>
                   <span className="text-blue-600 font-medium">Certification</span>
                 </nav>
@@ -55,7 +56,7 @@ const Certifications: React.FC = () => {
 
       {/* Certifications Section */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Certifications</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
@@ -89,7 +90,7 @@ const Certifications: React.FC = () => {
 
       {/* Quality Commitment */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Quality Commitment</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
@@ -163,13 +164,13 @@ const Certifications: React.FC = () => {
 
       {/* Call to Action */}
       <section className="py-16 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Quality You Can Trust</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Our certifications are your assurance of quality, safety, and environmental responsibility in every product and service we provide.
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
           >
             Learn More About Our Quality Standards
