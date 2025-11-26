@@ -106,13 +106,13 @@ const Header: React.FC = () => {
                 {isProductsOpen && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl z-50 py-4">
                     <Link
-                      href="/products/ammonium-persulfate"
+                      href="/products/ammonium-persulfate-in-india"
                       className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     >
                       Ammonium Persulfate
                     </Link>
                     <Link
-                      href="/products/sodium-persulfate"
+                      href="/products/sodium-persulfate-in-india"
                       className="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     >
                       Sodium Persulfate
@@ -181,14 +181,14 @@ const Header: React.FC = () => {
                   About Us
                 </Link>
                 <Link
-                  href="/products/ammonium-persulfate"
+                  href="/products/ammonium-persulfate-in-india"
                   className="text-gray-700 hover:text-blue-600 transition-colors font-medium pl-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Ammonium Persulfate
                 </Link>
                 <Link
-                  href="/products/sodium-persulfate"
+                  href="/products/sodium-persulfate-in-india"
                   className="text-gray-700 hover:text-blue-600 transition-colors font-medium pl-4"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

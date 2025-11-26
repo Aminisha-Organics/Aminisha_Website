@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import FAQ from "@/component/FAQ";
+import Script from "next/script";
 import {
   ChevronLeft,
   ChevronRight,
@@ -250,7 +252,7 @@ const Home: React.FC = () => {
                   in many applications.
                 </p>
                 <Link
-                  href="/products/ammonium-persulfate"
+                  href="/products/ammonium-persulfate-in-india"
                   className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
@@ -278,7 +280,7 @@ const Home: React.FC = () => {
                   agent in many applications.
                 </p>
                 <Link
-                  href="/products/sodium-persulfate"
+                  href="/products/sodium-persulfate-in-india"
                   className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
@@ -327,6 +329,59 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is ammonium persulfate used for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ammonium persulfate is a strong oxidizing agent used as a polymerization initiator for plastics and synthetic rubber, a bleaching agent for hair and textiles, and an etchant for printed circuit boards in the electronics industry. It is also used in food preservation, water treatment, and as a depolarizer in batteries."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is sodium persulfate used for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sodium persulfate is widely used due to its strong oxidizing properties. It is used in bleaching (hair and textile products), as a polymerization initiator for styrene-based polymers, and for cleaning and surface preparation such as etching printed circuit boards and cleaning metal surfaces. It is also applied in wastewater and soil remediation to break down contaminants."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What grade or purity do you supply?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We supply industrial-grade and high-purity grades greater than 98.5%."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What packaging options are available?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer the following packaging options: 1) 25 kg PP/HDPE bags with liner. 2) 50 kg PP/HDPE bags with liner. 3) 500 kg and 1000 kg jumbo bags. 4) Custom packaging as per customer requirements."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide COA, SDS, and test reports?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we provide Certificate of Analysis (COA), Safety Data Sheet (SDS), and batch-wise test reports."
+                }
+              }
+            ]
+          })
+        }}
+      />
+      <FAQ />
     </div>
   );
 };
