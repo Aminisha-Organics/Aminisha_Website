@@ -2,9 +2,7 @@
 import React, { use } from 'react';
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { log } from 'console';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -50,21 +48,20 @@ function ProductDetail({ params }: PageProps) {
   productData.push(ammonium);
   productData.push(sodium);
 
-  let ind = productName === 'ammonium-persulfate' ? 0 : 1;
+  let ind = productName === 'ammonium-persulfate-in-india' ? 0 : 1;
   const currentProduct = productData[ind];
-    console.log(currentProduct);
     
   // Specifications
   const specifications = [
-    { property: 'Molecular Weight', value: productName === 'ammonium-persulfate' ? '228.20 g/mol' : '238.10 g/mol' },
+    { property: 'Molecular Weight', value: productName === 'ammonium-persulfate-in-india' ? '228.20 g/mol' : '238.10 g/mol' },
     { property: 'Density', value: currentProduct.density },
     { property: 'Solubility', value: 'Highly soluble in water' },
     { property: 'Appearance', value: 'White crystalline powder' },
-    { property: 'Purity', value: productName === 'ammonium-persulfate' ? '≥ 98.0%' : '≥ 98.5%' },
+    { property: 'Purity', value: productName === 'ammonium-persulfate-in-india' ? '≥ 98.0%' : '≥ 98.5%' },
     { property: 'pH (10% solution)', value: '3.0 - 4.0' },
-    { property: 'Iron', value: productName === 'ammonium-persulfate' ? '0.0005% w/w max' : '0.001% w/w max' },
-    { property: 'Chloride and chlorate (as CL)', value: productName === 'ammonium-persulfate' ? '0.002% w/w max' : '0.005% w/w max' },
-    { property: 'Moisture', value: productName === 'ammonium-persulfate' ? '0.10% w/w max' : '0.05% w/w max' }
+    { property: 'Iron', value: productName === 'ammonium-persulfate-in-india' ? '0.0005% w/w max' : '0.001% w/w max' },
+    { property: 'Chloride and chlorate (as CL)', value: productName === 'ammonium-persulfate-in-india' ? '0.002% w/w max' : '0.005% w/w max' },
+    { property: 'Moisture', value: productName === 'ammonium-persulfate-in-india' ? '0.10% w/w max' : '0.05% w/w max' }
   ];
 
   // Applications

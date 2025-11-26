@@ -2,7 +2,7 @@
 export const metadata = {
   title: "About Us | Aminisha Organics LLP",
   description:
-    "Aminisha Organics LLP is a leading Indian company specializing in high-quality persulphate specially in sodium-persulfate and ammonium-persulpahte chemicals.",
+    "Aminisha Organics LLP is a leading Indian company specializing in high-quality persulphate specially in sodium-persulfate and ammonium-persulfate chemicals.",
   alternates: {
     canonical: "https://aminishaorganics.com/about",
   },

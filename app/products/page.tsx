@@ -35,7 +35,7 @@ const Products: React.FC = () => {
                   Ammonium Persulfate is a white, crystalline, odourless salt with a density of 1.98 g/cc. It is used as an initiator (source of free radicals) for the polymerization of monomers and as a strong oxidizing agent in many applications.
                 </p>
                 <Link
-                  href="/products/ammonium-persulfate"
+                  href="/products/ammonium-persulfate-in-india"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
@@ -59,7 +59,7 @@ const Products: React.FC = () => {
                   Sodium Persulfate is a white, crystalline, odourless salt or powder with the density of 2.59 g/cc. It is used as initiator for the Polymerization of monomers and as a strong oxidizing agent in many applications.
                 </p>
                 <Link
-                  href="/products/sodium-persulfate"
+                  href="/products/sodium-persulfate-in-india"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
                 >
                   <span>READ MORE</span>
