@@ -1,5 +1,3 @@
-import React from "react";
-
 export const metadata = {
   title: "Persulfates in India – Uses, Market Demand & Supplier Guide | Aminisha Organics",
   description:
@@ -36,7 +34,7 @@ export default function PersulfateBlogPage() {
       {/* BLOG HEADER */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-800 py-16 text-white text-center px-6">
         <h1 className="text-4xl md:text-5xl font-bold">
-          Persulfates in India – Complete Guide to APS & SPS
+          Persulfates in India - Complete Guide to APS & SPS
         </h1>
         <p className="mt-4 text-lg max-w-3xl mx-auto opacity-90">
           A detailed industry-focused blog covering Ammonium Persulfate (APS) and Sodium Persulfate (SPS), 

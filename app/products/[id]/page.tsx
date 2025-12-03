@@ -1,5 +1,5 @@
 "use client";
-import React, { use } from 'react';
+import { use } from 'react';
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Image from "next/image";
