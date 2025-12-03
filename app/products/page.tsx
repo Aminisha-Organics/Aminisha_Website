@@ -108,17 +108,26 @@ const Products: React.FC = () => {
     </Script>
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-slate-800 text-white py-24">
+      <section className="bg-slate-800 text-white py-24 hidden lg:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-4">Products</h2>
             <h1 className="text-xl text-gray-300 mb-8">Check out our best product and solutions</h1>
           </div>
+          <div className="flex items-center justify-center space-x-2 mt-8">
+              <div className="bg-white rounded-lg px-6 py-3">
+                <nav className="flex items-center space-x-2 text-sm">
+                  <Link href="/" className="text-blue-600 hover:underline">Home</Link>
+                  <span className="text-gray-400">/</span>
+                  <span className="text-blue-600 font-medium">Products</span>
+                </nav>
+              </div>
+            </div>
         </div>
       </section>
 
       {/* Products Section */}
-      <section className="py-16">
+      <section className="lg:py-16 sm:py-12 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Ammonium Persulfate */}

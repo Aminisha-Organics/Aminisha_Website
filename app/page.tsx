@@ -87,7 +87,7 @@ export default function HomePage() {
           backgroundImage: `url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop')`
         }}>
           <div className="backdrop-brightness-75 w-full h-full flex items-center">
-            <div className="max-w-6xl mx-auto px-6 py-16 text-center">
+            <div className="max-w-6xl mx-auto px-1 py-16 text-center">
               <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
                 Ammonium Persulfate (APS) & Sodium Persulfate (SPS) Supplier in India
               </h1>

@@ -31,7 +31,7 @@ const AboutUs: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-slate-800 text-white py-24">
+      <section className="bg-slate-800 text-white py-24 hidden lg:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-4">About Us</h2>
@@ -49,7 +49,7 @@ const AboutUs: React.FC = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-16">
+      <section className="lg:py-16 sm:py-12 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -107,20 +107,24 @@ const AboutUs: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
-                <Award className="w-6 h-6 text-white" />
+              <div className='flex gap-5 items-center'>
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
                 To manufacture high-purity persulfate chemicals that meet global quality standards while ensuring safety, sustainability, and reliable supply to industries worldwide.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-6">
-                <Award className="w-6 h-6 text-white" />
+              <div className='flex gap-5 items-center'>
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-6">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
                 To become a globally recognized leader in persulfate manufacturing through innovation, superior quality, and responsible chemistry.
               </p>
