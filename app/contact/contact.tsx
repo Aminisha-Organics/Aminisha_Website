@@ -64,9 +64,34 @@ const sendEmail = async () => {
     setIsSubmitting(false);
   }
 };
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    headline: "Persulfates in India - Complete Guide to APS & SPS",
+    description:
+      "Contact Aminisha Organics LLP for inquiries about Sodium Persulfate (SPS), Ammonium Persulfate(APS) and technical specifications. India's trusted persulfate manufacturer.",
+    author: {
+      "@type": "Organization",
+      name: "Aminisha Organics LLP",
+      url: "https://www.aminishaorganics.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Aminisha Organics LLP",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.aminishaorganics.com/logo.png",
+      },
+    },
+    mainEntityOfPage: "https://www.aminishaorganics.com/contact",
+  };
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="bg-slate-800 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">

@@ -137,6 +137,14 @@ const Header: React.FC = () => {
               >
                 Contact Us
               </Link>
+              <Link
+                href="/blog"
+                className={`text-gray-700 hover:text-blue-600 transition-colors font-medium text-lg ${
+                  isActive("/blog") ? "text-blue-600" : ""
+                }`}
+              >
+                Blog
+              </Link>
             </nav>
 
             {/* Call Anytime Button */}
@@ -211,6 +219,15 @@ const Header: React.FC = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact Us
+                </Link>
+                <Link
+                  href="/blog"
+                  className={`text-gray-700 hover:text-blue-600 transition-colors font-medium ${
+                    isActive("/blog") ? "text-blue-600" : ""
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog
                 </Link>
                 <div className="flex items-center gap-3 bg-white border border-blue-600 text-blue-600 px-5 py-2 rounded-xl shadow-sm">
                   <Phone className="w-5 h-5" />

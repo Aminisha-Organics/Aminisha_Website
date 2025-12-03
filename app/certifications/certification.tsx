@@ -33,8 +33,30 @@ const Certifications: React.FC = () => {
     window.open(pdfUrl, '_blank');
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "ISO Certifications – Aminisha Organics LLP",
+    mainEntity: certifications.map((cert) => ({
+      "@type": "CreativeWork",
+      name: cert.name,
+      about: cert.description,
+      description: cert.details,
+      url: "https://www.aminishaorganics.com/certifications",
+    })),
+    publisher: {
+      "@type": "Organization",
+      name: "Aminisha Organics LLP",
+      url: "https://www.aminishaorganics.com",
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="bg-slate-800 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">

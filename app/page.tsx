@@ -1,389 +1,271 @@
-"use client";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import FAQ from "@/component/FAQ";
 import Script from "next/script";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-  Award,
-  Shield,
-  Zap,
-  Factory,
-  Beaker,
-  Truck,
-  Building2,
-  Cpu,
-  Wrench,
-  Users,
-  HardHat,
-  TreePine,
-} from "lucide-react";
+import Image from "next/image";
 
-const Home: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export const metadata = {
+  title:
+    "Ammonium Persulfate (APS) & Sodium Persulfate (SPS) Supplier in India | Aminisha Organics",
+  description:
+    "Aminisha Organics supplies high-purity Ammonium Persulfate (APS) and Sodium Persulfate (SPS) across India. Read about applications, grades, packaging and request a quote.",
+  keywords:
+    "Ammonium Persulfate in India, APS in India, Sodium Persulfate in India, SPS in India, Persulfate supplier India, Persulphate India",
+  alternates: {
+    canonical: "https://www.aminishaorganics.com/",
+  },
+};
 
-  const slides = [
-    {
-      image:
-        "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
-      title: "Quality Chemical Solutions",
-      subtitle: "Leading manufacturer of specialty chemicals",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
-      title: "Advanced Manufacturing",
-      subtitle: "State-of-the-art production facilities",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop",
-      title: "Global Excellence",
-      subtitle: "Serving customers worldwide with quality products",
-    },
-  ];
-
-  const industries = [
-    { name: "Agriculture", icon: <TreePine className="w-8 h-8" /> },
-    { name: "Animal Nutrition", icon: <Beaker className="w-8 h-8" /> },
-    { name: "Dyes & Textile", icon: <Truck className="w-8 h-8" /> },
-    { name: "Hair Care", icon: <Users className="w-8 h-8" /> },
-    { name: "Human Nutrition", icon: <Building2 className="w-8 h-8" /> },
-    { name: "Industrial", icon: <Wrench className="w-8 h-8" /> },
-    { name: "Oil & Gas", icon: <HardHat className="w-8 h-8" /> },
-    { name: "Pharmaceuticals", icon: <Shield className="w-8 h-8" /> },
-    { name: "Polymer", icon: <Zap className="w-8 h-8" /> },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+export default function HomePage() {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Aminisha Organics LLP",
+    url: "https://www.aminishaorganics.com",
+    logo: "https://www.aminishaorganics.com/logo.png",
+    sameAs: [],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+91-9428323829",
+        contactType: "sales",
+        areaServed: "IN",
+      },
+    ],
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        name: "Ammonium Persulfate (APS)",
+        description:
+          "Ammonium Persulfate (APS) — high-purity (>98.5%) oxidizer used as a polymerization initiator, PCB etchant, and bleaching agent. Available in 25kg, 50kg and jumbo packaging.",
+        url: "https://www.aminishaorganics.com/products/ammonium-persulfate-in-india",
+        brand: "Aminisha Organics",
+        sku: "APS-IND-001",
+      },
+      {
+        "@type": "Product",
+        name: "Sodium Persulfate (SPS)",
+        description:
+          "Sodium Persulfate (SPS) — strong oxidizer preferred for electronics etching, surface activation, and remediation. High-purity grades available for industrial use.",
+        url: "https://www.aminishaorganics.com/products/sodium-persulfate-in-india",
+        brand: "Aminisha Organics",
+        sku: "SPS-IND-001",
+      },
+    ],
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Carousel */}
-      <div className="relative h-screen min-h-screen overflow-hidden ">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover brightness-75"
-              width={1200}
-              height={600}
-            />
-            <div className="bg-red-500 h-10 w-10"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white max-w-4xl px-4">
-                <h2 className="text-4xl md:text-6xl font-bold mb-4">
-                  {slide.title}
-                </h2>
-                <p className="text-xl md:text-2xl mb-8">{slide.subtitle}</p>
+    <main className="bg-white text-gray-800">
+      {/* JSON-LD: Organization + Product */}
+      <Script
+        id="org-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+
+      {/* HERO */}
+      <section className="relative">
+        <div className="w-full h-[60vh] md:h-[70vh] bg-cover bg-center" style={{
+          backgroundImage: `url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop')`
+        }}>
+          <div className="backdrop-brightness-75 w-full h-full flex items-center">
+            <div className="max-w-6xl mx-auto px-6 py-16 text-center">
+              <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+                Ammonium Persulfate (APS) & Sodium Persulfate (SPS) Supplier in India
+              </h1>
+              <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+                High-purity persulfates for polymers, electronics, water treatment and industrial applications — certified COA, SDS and reliable bulk supply across India.
+              </p>
+              <div className="mt-8 flex justify-center gap-4">
                 <Link
                   href="/products"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold"
                 >
-                  <span>Our Products</span>
-                  <ArrowRight className="w-5 h-5" />
+                  View Products
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-block bg-white text-blue-700 px-6 py-3 rounded-md font-semibold"
+                >
+                  Request Quote
                 </Link>
               </div>
             </div>
           </div>
-        ))}
+        </div>
+      </section>
 
-        {/* Carousel Navigation */}
-        <button
-          onClick={prevSlide}
-          className="absolute opacity-0 lg:opacity-100 left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
-        >
-          <ChevronLeft className="w-6 h-6 fill-black" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute opacity-0 lg:opacity-100 right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
-        >
-          <ChevronRight className="w-6 h-6 fill-black" />
-        </button>
+      {/* QUICK BENEFITS */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3">
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-lg mb-2">Purity & Quality</h3>
+            <p className="text-sm text-gray-600">
+              We supply APS & SPS with industry-leading purity ({">"}98.5%) and full batch COA to ensure consistent performance.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-lg mb-2">Industrial Packaging</h3>
+            <p className="text-sm text-gray-600">
+              Flexible packaging: 25/50 kg bags, jumbo bags and custom options for export-ready shipments.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold text-lg mb-2">Technical Support</h3>
+            <p className="text-sm text-gray-600">
+              Application guidance for polymerization, etching, bleaching and remediation from our technical team.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Indicators */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? "bg-white" : "bg-white bg-opacity-50"
-              }`}
+      {/* ABOUT / OVERVIEW */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Overview of Aminisha Organics LLP
+            </h2>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Aminisha Organics LLP is a India-based specialty chemical supplier focusing on high-purity
+              persulfates for industrial use. Our products—Ammonium Persulfate (APS) and Sodium Persulfate (SPS)—
+              serve customers in polymer, electronics, textiles, cosmetics and environmental sectors.
+            </p>
+
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              We prioritize consistent quality, regulatory compliance, and timely distribution across India and for export.
+            </p>
+
+            <div className="flex gap-4 mt-6">
+              <Link href="/about" className="text-blue-600 font-semibold">
+                Learn more about us →
+              </Link>
+              <Link href="/contact" className="text-blue-600 font-semibold">
+                Contact Sales →
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-lg overflow-hidden">
+            {/* Using <img> so remote domain doesn't require next.config.js changes */}
+            <Image
+              src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+              alt="Aminisha Organics manufacturing overview"
+              className="w-full h-64 object-cover"
+              width={1200}
+              height={800}
             />
-          ))}
-        </div>
-      </div>
-
-      {/* Our Core Values */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Core Values
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
-              <Shield className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">
-                Quality & Compliance System
-              </h3>
-            </div>
-            <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
-              <Users className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">
-                Customer Centricity
-              </h3>
-            </div>
-            <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
-              <Award className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Reliability</h3>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Company Overview */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+      {/* PRODUCTS HIGHLIGHT */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Featured Products</h3>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            <article className="bg-white rounded-lg shadow overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Excellence Rating"
-                className="w-full rounded-lg"
-                width={1200}
-                height={600}
+                src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"
+                alt="Ammonium Persulfate (APS) - supplier India"
+                className="w-full h-44 object-cover"
+                width={800}
+                height={500}
               />
-            </div>
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                Overview Of Aminisha Organics LLP
-              </h1>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Aminisha Organics LLP an indian company dealing in specialty
-                chemicals, has been developing, manufacturing & supplying
-                Persulphate range of products to customers around the world.
-              </p>
-              <div className="flex items-center space-x-4 mb-6">
-                <Link
-                  href="/about"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  READ MORE
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2">Ammonium Persulfate (APS)</h4>
+                <p className="text-gray-600 mb-4">
+                  High-purity Ammonium Persulfate for polymerization initiators, PCB etching and bleaching applications. Available in industrial packaging with COA & SDS.
+                </p>
+                <Link href="/products/ammonium-persulfate-in-india" className="text-blue-600 font-semibold">
+                  Read product details →
                 </Link>
-                <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Award className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <span className="text-gray-600">+91 9428323829</span>
-                </div>
               </div>
+            </article>
+
+            <article className="bg-white rounded-lg shadow overflow-hidden">
+              <Image
+                src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"
+                alt="Sodium Persulfate (SPS) - supplier India"
+                className="w-full h-44 object-cover"
+                width={800}
+                height={500}
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2">Sodium Persulfate (SPS)</h4>
+                <p className="text-gray-600 mb-4">
+                  Sodium Persulfate with strong oxidizing power for electronics, surface activation and remediation. Export-ready packaging available.
+                </p>
+                <Link href="/products/sodium-persulfate-in-india" className="text-blue-600 font-semibold">
+                  Read product details →
+                </Link>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Industries We Serve</h3>
+
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="p-4 bg-white rounded-lg shadow">
+              <h5 className="font-semibold">Polymer & Plastics</h5>
+              <p className="text-sm text-gray-600">Initiators, crosslinking & processing aids</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow">
+              <h5 className="font-semibold">Electronics</h5>
+              <p className="text-sm text-gray-600">PCB etching, surface cleaning</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow">
+              <h5 className="font-semibold">Textiles & Dyes</h5>
+              <p className="text-sm text-gray-600">Bleaching, desizing</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow">
+              <h5 className="font-semibold">Water Treatment</h5>
+              <p className="text-sm text-gray-600">Oxidation & remediation</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            We’re always happy to connect with industry peers, supportive
-            vendors, and creative researchers who see potential for synergy.
-          </h2>
-          <Link
-            href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block mt-8"
-          >
-            CONTACT US
+      {/* CTA BOTTOM */}
+      <section className="py-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to source high-quality persulfates?</h3>
+          <p className="mb-6 max-w-2xl mx-auto">
+            Contact our sales team for samples, COA, SDS and bulk pricing. We ship across India and internationally with export compliant documentation.
+          </p>
+          <Link href="/contact" className="inline-block bg-white text-blue-700 px-6 py-3 rounded-md font-semibold">
+            Request a Quote
           </Link>
         </div>
       </section>
-
-      {/* Our Products */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Products
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                alt="Ammonium Persulfate"
-                className="w-full h-64 object-cover"
-                width={1200}
-                height={600}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
-                  Ammonium Persulfate
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Ammonium Persulfate is a white, crystalline, odourless salt
-                  with a density of 1.98 g/cc. It is used as an initiator for
-                  the polymerization of monomers and as a strong oxidizing agent
-                  in many applications.
-                </p>
-                <Link
-                  href="/products/ammonium-persulfate-in-india"
-                  className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
-                >
-                  <span>READ MORE</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                alt="Sodium Persulfate"
-                className="w-full h-64 object-cover"
-                width={1200}
-                height={600}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
-                  Sodium Persulfate
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Sodium Persulfate is a white, crystalline, odourless salt or
-                  powder with the density of 2.59 g/cc. It is used as initiator
-                  for the Polymerization of monomers and as a strong oxidizing
-                  agent in many applications.
-                </p>
-                <Link
-                  href="/products/sodium-persulfate-in-india"
-                  className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center space-x-2"
-                >
-                  <span>READ MORE</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Products */}
-      <section className="py-16 bg-blue-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            We're Delivering the Best Products & Solutions
-          </h2>
-          <Link
-            href="/products"
-            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors inline-block mt-8"
-          >
-            OUR PRODUCTS
-          </Link>
-        </div>
-      </section>
-
-      {/* Industries Served */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Industries Served
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {industries.map((industry, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 text-blue-600">
-                  {industry.icon}
-                </div>
-                <h3 className="text-sm font-medium text-gray-700">
-                  {industry.name}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is ammonium persulfate used for?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ammonium persulfate is a strong oxidizing agent used as a polymerization initiator for plastics and synthetic rubber, a bleaching agent for hair and textiles, and an etchant for printed circuit boards in the electronics industry. It is also used in food preservation, water treatment, and as a depolarizer in batteries."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is sodium persulfate used for?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sodium persulfate is widely used due to its strong oxidizing properties. It is used in bleaching (hair and textile products), as a polymerization initiator for styrene-based polymers, and for cleaning and surface preparation such as etching printed circuit boards and cleaning metal surfaces. It is also applied in wastewater and soil remediation to break down contaminants."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What grade or purity do you supply?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We supply industrial-grade and high-purity grades greater than 98.5%."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What packaging options are available?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We offer the following packaging options: 1) 25 kg PP/HDPE bags with liner. 2) 50 kg PP/HDPE bags with liner. 3) 500 kg and 1000 kg jumbo bags. 4) Custom packaging as per customer requirements."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you provide COA, SDS, and test reports?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we provide Certificate of Analysis (COA), Safety Data Sheet (SDS), and batch-wise test reports."
-                }
-              }
-            ]
-          })
-        }}
-      />
-      <FAQ />
-    </div>
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold mb-4">Read Our Latest Blogs</h2>
+    <p className="text-gray-600 mb-8">
+      Insights on persulfate chemistry, applications, and industry updates.
+    </p>
+    <Link
+      href="/blog"
+      className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 inline-flex items-center"
+    >
+      Visit Blog
+    </Link>
+  </div>
+</section>
+    </main>
   );
-};
-
-export default Home;
+}

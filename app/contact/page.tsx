@@ -1,9 +1,19 @@
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Contact Us | Aminisha Organics LLP",
+  title: "Contact Aminisha Organics LLP | Persulfate Manufacturer in India",
   description:
-    "Get in touch with Aminisha Organics LLP. Contact us for product inquiries, partnerships, technical details, or general support.",
+    "Contact Aminisha Organics LLP for inquiries about Sodium Persulfate (SPS), Ammonium Persulfate(APS) and technical specifications. India's trusted persulfate manufacturer.",
+  keywords: [
+    "contact Aminisha Organics",
+    "persulfate manufacturer India",
+    "Sodium Persulfate supplier",
+    "Ammonium Persulfate manufacturer",
+    "chemical manufacturer contact",
+    "industrial chemical supplier India",
+    "Aminisha Organics phone number",
+    "Aminisha Organics email"
+  ],
   alternates: {
     canonical: "https://aminishaorganics.com/contact",
   },

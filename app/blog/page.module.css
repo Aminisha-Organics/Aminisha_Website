@@ -1,0 +1,40 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0d3b66;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-top: 35px;
+  font-size: 1.8rem;
+  color: #0d3b66;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}

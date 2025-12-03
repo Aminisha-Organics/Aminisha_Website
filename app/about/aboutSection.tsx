@@ -4,6 +4,30 @@ import { Phone, Award } from 'lucide-react';
 import Image from "next/image";
 
 const AboutUs: React.FC = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Aminisha Organics LLP",
+    url: "https://aminishaorganics.com",
+    logo: "https://aminishaorganics.com/logo.png",
+    description:
+      "Aminisha Organics LLP is a leading Indian manufacturer of high-purity Sodium Persulfate (SPS) and Ammonium Persulfate (APS).",
+    foundingDate: "2000",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "IN",
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+91 9428323829",
+        contactType: "Customer Support",
+      },
+    ],
+    sameAs: [
+      "https://www.linkedin.com/company/aminisha-organics",
+    ],
+  };
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -35,15 +59,16 @@ const AboutUs: React.FC = () => {
               </div>
               <div className="space-y-4 text-gray-600">
                 <p className="leading-relaxed">
-                  Aminisha Organics LLP an indian company dealing in specialty chemicals, has been developing, manufacturing & supplying Persulphate range of products to customers around the world.
+                  Aminisha Organics LLP is an Indian specialty chemical company focused on the development, manufacturing, and supply of high-purity persulfate chemicals — including Sodium Persulfate (SPS) and Ammonium Persulfate (APS).
                 </p>
                 <p className="leading-relaxed">
-                  AMINISHA has an excellent and expert team of competent leaders which have more than 25 years of successful experience in the field of process.
+                  Our leadership team brings 25+ years of strong industrial experience in chemical process engineering, safety, and large-scale manufacturing.
                 </p>
                 <p className="leading-relaxed">
-                  Our proprietary electrochemical technology is par excellence. The company a state-of-the-art manufacturing campus, strategically located in western India. Best in class Safety, Sustainability initiatives and Regulatory Compliance have precedence over any other company objective.
+                  With proprietary electrochemical technology and a state-of-the-art campus located in western India, we prioritize quality, sustainability, and strict regulatory compliance across every batch we produce.
                 </p>
               </div>
+
               <div className="flex items-center space-x-4 mt-8">
                 <div className="flex items-center space-x-2">
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
@@ -56,10 +81,11 @@ const AboutUs: React.FC = () => {
                 </div>
               </div>
             </div>
+
             <div>
               <Image
                 src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Manufacturing Facility"
+                alt="Aminisha Organics manufacturing facility"
                 className="w-full rounded-lg shadow-lg"
                 width={1200}
                 height={600}
@@ -69,15 +95,16 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* Our Mission & Vision */}
+      {/* Mission & Vision */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Mission & Vision</h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              We are committed to delivering exceptional chemical solutions that drive innovation and create value for our customers worldwide.
+              We are committed to delivering high-quality chemical solutions backed by innovation, consistency, and customer-centric service.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
@@ -85,16 +112,17 @@ const AboutUs: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To manufacture high-quality specialty chemicals that meet the evolving needs of our customers while maintaining the highest standards of safety, sustainability, and regulatory compliance.
+                To manufacture high-purity persulfate chemicals that meet global quality standards while ensuring safety, sustainability, and reliable supply to industries worldwide.
               </p>
             </div>
+
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-6">
                 <Award className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                To be the global leader in persulfate chemistry, recognized for our innovation, quality, and commitment to creating sustainable solutions that benefit our customers and communities.
+                To become a globally recognized leader in persulfate manufacturing through innovation, superior quality, and responsible chemistry.
               </p>
             </div>
           </div>
@@ -107,9 +135,10 @@ const AboutUs: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Aminisha Organics</h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              With over 25 years of experience and cutting-edge technology, we deliver excellence in every aspect of our business.
+              Our decades of expertise and cutting-edge manufacturing deliver unmatched reliability, quality, and performance.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -117,37 +146,39 @@ const AboutUs: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Quality Excellence</h3>
               <p className="text-gray-600">
-                State-of-the-art manufacturing processes ensure the highest quality standards in every product we deliver.
+                Our production systems maintain strict quality control to ensure consistency in every persulfate batch.
               </p>
             </div>
+
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Global Reach</h3>
               <p className="text-gray-600">
-                Serving customers worldwide with reliable supply chains and comprehensive technical support.
+                We serve industries across India and worldwide with dependable logistics and technical support.
               </p>
             </div>
+
             <div className="text-center">
               <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Innovation Focus</h3>
               <p className="text-gray-600">
-                Continuous research and development to create innovative solutions that meet evolving market needs.
+                Our R&D initiatives enable continuous improvement and advanced solutions in persulfate chemistry.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* CTA */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
           <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to Partner with Us?</h3>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Discover how our expertise and commitment to excellence can benefit your business.
+            Connect with our team and explore how Aminisha Organics can support your business needs.
           </p>
           <Link
             href="/contact"
@@ -157,10 +188,12 @@ const AboutUs: React.FC = () => {
           </Link>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </div>
   );
 };
-
-
 
 export default AboutUs;

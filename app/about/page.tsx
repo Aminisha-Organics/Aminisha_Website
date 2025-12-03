@@ -1,14 +1,49 @@
+import About from "./aboutSection";
+import Script from "next/script";
 
 export const metadata = {
-  title: "About Us | Aminisha Organics LLP",
+  title: "About Aminisha Organics LLP | Leading Persulfate Manufacturer in India",
   description:
-    "Aminisha Organics LLP is a leading Indian company specializing in high-quality persulphate specially in sodium-persulfate and ammonium-persulfate chemicals.",
+    "Aminisha Organics LLP is India’s trusted supplier of high-purity Ammonium Persulfate (APS) and Sodium Persulfate (SPS), backed by 25+ years of expertise and global reach.",
+  keywords:
+    "About Aminisha Organics, persulfate manufacturer India, sodium persulfate supplier, ammonium persulfate supplier, APS manufacturer, SPS manufacturer",
   alternates: {
     canonical: "https://aminishaorganics.com/about",
   },
 };
 
-import About from "./aboutSection";
 export default function Page() {
-  return <About />;
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Aminisha Organics LLP",
+    url: "https://aminishaorganics.com/about",
+    description:
+      "Aminisha Organics LLP is an Indian specialty chemical company focused on high-purity persulfate manufacturing and global distribution.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Aminisha Organics LLP",
+      url: "https://aminishaorganics.com",
+      logo: "https://aminishaorganics.com/logo.png",
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+91-9428323829",
+          contactType: "customer service",
+          areaServed: "IN",
+        },
+      ],
+    },
+  };
+
+  return (
+    <>
+      <Script
+        id="about-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
+      <About />
+    </>
+  );
 }
