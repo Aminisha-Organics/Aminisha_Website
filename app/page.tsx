@@ -44,6 +44,11 @@ export default function HomePage() {
         url: "https://www.aminishaorganics.com/products/ammonium-persulfate-in-india",
         brand: "Aminisha Organics",
         sku: "APS-IND-001",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          "ratingValue": 4.4,
+          "reviewCount": 89
+        }
       },
       {
         "@type": "Product",
@@ -53,6 +58,11 @@ export default function HomePage() {
         url: "https://www.aminishaorganics.com/products/sodium-persulfate-in-india",
         brand: "Aminisha Organics",
         sku: "SPS-IND-001",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          "ratingValue": 4.2,
+          "reviewCount": 89
+        }
       },
     ],
   };
