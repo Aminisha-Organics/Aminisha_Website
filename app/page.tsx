@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
@@ -86,7 +85,7 @@ export default function HomePage() {
         <div className="w-full h-[60vh] md:h-[70vh] bg-cover bg-center" style={{
           backgroundImage: `url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600&h=800&fit=crop')`
         }}>
-          <div className="backdrop-brightness-75 w-full h-full flex items-center">
+          <div className="backdrop-brightness-55 w-full h-full flex items-center">
             <div className="max-w-6xl mx-auto px-1 py-16 text-center">
               <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
                 Ammonium Persulfate (APS) & Sodium Persulfate (SPS) Supplier in India
@@ -117,19 +116,19 @@ export default function HomePage() {
       <section className="py-12 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-3">
           <div className="p-6 bg-white rounded-lg shadow">
-            <h3 className="font-semibold text-lg mb-2">Purity & Quality</h3>
+            <h2 className="font-semibold text-lg mb-2">Purity & Quality</h2>
             <p className="text-sm text-gray-600">
               We supply APS & SPS with industry-leading purity ({">"}98.5%) and full batch COA to ensure consistent performance.
             </p>
           </div>
           <div className="p-6 bg-white rounded-lg shadow">
-            <h3 className="font-semibold text-lg mb-2">Industrial Packaging</h3>
+            <h2 className="font-semibold text-lg mb-2">Industrial Packaging</h2>
             <p className="text-sm text-gray-600">
               Flexible packaging: 25/50 kg bags, jumbo bags and custom options for export-ready shipments.
             </p>
           </div>
           <div className="p-6 bg-white rounded-lg shadow">
-            <h3 className="font-semibold text-lg mb-2">Technical Support</h3>
+            <h2 className="font-semibold text-lg mb-2">Technical Support</h2>
             <p className="text-sm text-gray-600">
               Application guidance for polymerization, etching, bleaching and remediation from our technical team.
             </p>

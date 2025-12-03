@@ -1,9 +1,8 @@
-import React from 'react';
 import Link from "next/link";
 import { Phone, Award } from 'lucide-react';
 import Image from "next/image";
 
-const AboutUs: React.FC = () => {
+export default function AboutUs() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -199,5 +198,3 @@ const AboutUs: React.FC = () => {
     </div>
   );
 };
-
-export default AboutUs;

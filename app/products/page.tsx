@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Image from "next/image";
 import Script from 'next/script';
 
-const Products: React.FC = () => {
+export default function Products() {
   return (
     <>
     <Script id="products-schema" type="application/ld+json">
@@ -148,7 +148,7 @@ const Products: React.FC = () => {
                   href="/products/ammonium-persulfate-in-india"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
                 >
-                  <span>READ MORE</span>
+                  <span>Explore Ammonium Persulfate</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -172,7 +172,7 @@ const Products: React.FC = () => {
                   href="/products/sodium-persulfate-in-india"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center space-x-2"
                 >
-                  <span>READ MORE</span>
+                  <span>Explore Sodium Persulfate</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -268,6 +268,3 @@ export const metadata = {
     canonical: "https://aminishaorganics.com/products",
   },
 };
-
-
-export default Products;

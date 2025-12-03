@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Link from "next/link";
-import { Mail, Phone, MapPin, Send, Twitter, Facebook, Instagram, Linkedin, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { useSearchParams } from "next/navigation";
 
@@ -268,7 +268,8 @@ const jsonLd = {
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3704.450035246981!2d72.81558237600568!3d21.801536160787453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f85add7072165%3A0xff2509edb8c8e0ed!2sAMINISHA%20ORGANICS%20LLP!5e0!3m2!1sen!2sin!4v1752825313187!5m2!1sen!2sin"
                loading="lazy"
                width="100%"
-               height="100%"></iframe>
+               height="100%"
+               title='Aminisha Organics Map'></iframe>
             </div>
           </div>
         </div>

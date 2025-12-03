@@ -1,9 +1,8 @@
-import React from 'react';
 import Link from "next/link";
-import { Mail, MapPin, Phone} from 'lucide-react';
+import { Mail, MapPin} from 'lucide-react';
 import Image from "next/image";
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
     <footer className="bg-slate-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-12">
@@ -86,5 +85,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;

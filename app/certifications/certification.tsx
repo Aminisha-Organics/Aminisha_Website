@@ -1,9 +1,8 @@
 "use client";
-import React from 'react';
 import Link from "next/link";
-import { Award, Shield, CheckCircle, Download, ExternalLink } from 'lucide-react';
+import { Award, Shield, CheckCircle, ExternalLink } from 'lucide-react';
 
-const Certifications: React.FC = () => {
+export default function Certifications() {
   const certifications = [
     {
       name: 'ISO 9001',
@@ -219,5 +218,3 @@ const Certifications: React.FC = () => {
     </div>
   );
 };
-
-export default Certifications;
