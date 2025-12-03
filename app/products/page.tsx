@@ -2,9 +2,110 @@ import React from 'react';
 import Link from "next/link";
 import { ArrowRight } from 'lucide-react';
 import Image from "next/image";
+import Script from 'next/script';
 
 const Products: React.FC = () => {
   return (
+    <>
+    <Script id="products-schema" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            // Organization Schema
+            {
+              "@type": "Organization",
+              "@id": "https://aminishaorganics.com/#organization",
+              "name": "Aminisha Organics LLP",
+              "url": "https://aminishaorganics.com",
+              "logo": "https://aminishaorganics.com/logo.png",
+              "description":
+                "Aminisha Organics LLP is India's trusted manufacturer of high-purity persulfates including Ammonium Persulfate (APS) and Sodium Persulfate (SPS).",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-0000000000",
+                "contactType": "customer service",
+                "areaServed": "IN"
+              }
+            },
+
+            // Breadcrumb Schema
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://aminishaorganics.com/products/#breadcrumb",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://aminishaorganics.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Products",
+                  "item": "https://aminishaorganics.com/products"
+                }
+              ]
+            },
+
+            // Product 1 — Ammonium Persulfate
+            {
+              "@type": "Product",
+              "@id": "https://aminishaorganics.com/products/ammonium-persulfate-in-india/#product",
+              "name": "Ammonium Persulfate (APS)",
+              "description":
+                "High-purity Ammonium Persulfate (APS) manufactured in India. Widely used in polymerization, bleaching, electronics, and water treatment.",
+              "brand": {
+                "@type": "Brand",
+                "name": "Aminisha Organics LLP"
+              },
+              "manufacturer": {
+                "@type": "Organization",
+                "name": "Aminisha Organics LLP"
+              },
+              "url": "https://aminishaorganics.com/products/ammonium-persulfate-in-india",
+              "sku": "APS-INDIA",
+              "category": "Chemicals",
+              "image": "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://aminishaorganics.com/products/ammonium-persulfate-in-india",
+                "price": "0"
+              }
+            },
+
+            // Product 2 — Sodium Persulfate
+            {
+              "@type": "Product",
+              "@id": "https://aminishaorganics.com/products/sodium-persulfate-in-india/#product",
+              "name": "Sodium Persulfate (SPS)",
+              "description":
+                "High-purity Sodium Persulfate (SPS) manufactured in India. Commonly used in polymerization, soil remediation, surface cleaning, and electronics.",
+              "brand": {
+                "@type": "Brand",
+                "name": "Aminisha Organics LLP"
+              },
+              "manufacturer": {
+                "@type": "Organization",
+                "name": "Aminisha Organics LLP"
+              },
+              "url": "https://aminishaorganics.com/products/sodium-persulfate-in-india",
+              "sku": "SPS-INDIA",
+              "category": "Chemicals",
+              "image": "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://aminishaorganics.com/products/sodium-persulfate-in-india",
+                "price": "0"
+              }
+            }
+          ]
+        })}
+    </Script>
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-slate-800 text-white py-24">
@@ -137,11 +238,23 @@ const Products: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
 export const metadata = {
-  title: "Products | Aminisha Organics LLP",
+  title: "Persulfate Products in India | Ammonium & Sodium Persulfate | Aminisha Organics LLP",
+  description:
+    "Explore persulfate products from Aminisha Organics. We manufacture Ammonium Persulfate(APS) and Sodium Persulfate(SPS) for polymerization, electronics, textiles, water treatment, and industrial applications.",
+  keywords: [
+    "persulfate products India",
+    "Ammonium Persulfate supplier",
+    "Sodium Persulfate manufacturer",
+    "APS manufacturer India",
+    "SPS supplier India",
+    "persulfate chemicals India",
+    "Aminisha Organics products"
+  ],
   alternates: {
     canonical: "https://aminishaorganics.com/products",
   },
