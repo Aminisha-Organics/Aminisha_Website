@@ -8,10 +8,6 @@ import {
   ChevronDown,
   Phone,
   Mail,
-  Twitter,
-  Facebook,
-  Instagram,
-  Linkedin,
   Menu,
   X,
 } from "lucide-react";

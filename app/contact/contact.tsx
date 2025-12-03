@@ -93,7 +93,7 @@ const jsonLd = {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Hero Section */}
-      <section className="bg-slate-800 text-white py-24">
+      <section className="bg-slate-800 text-white py-24 hidden lg:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Get in touch with us</h1>
@@ -112,7 +112,7 @@ const jsonLd = {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16">
+      <section className="lg:py-16 sm:py-12 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12" style={{alignItems: 'center'}}>
             {/* Contact Form */}

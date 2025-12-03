@@ -58,7 +58,7 @@ const Certifications: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Hero Section */}
-      <section className="bg-slate-800 text-white py-24">
+      <section className="bg-slate-800 text-white py-24 hidden lg:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Quality Certification</h1>
@@ -77,7 +77,7 @@ const Certifications: React.FC = () => {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16">
+      <section className="lg:py-16 sm:py-12 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Certifications</h2>
@@ -122,60 +122,77 @@ const Certifications: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Award className="w-6 h-6 text-blue-600" />
-              </div>
+              <div className='flex gap-5 items-center'>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <Award className="w-6 h-6 text-blue-600" />
+                </div>
               <h3 className="text-xl font-semibold mb-3">Quality Management</h3>
+              </div>
               <p className="text-gray-600">
                 Comprehensive quality management systems ensure consistent product quality and customer satisfaction.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className='flex gap-5 items-center'>
+
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Environmental Protection</h3>
+              <h3 className="text-xl font-semibold mb-3">Environment Protection</h3>
+              </div>
               <p className="text-gray-600">
                 Our environmental management systems minimize ecological impact while maintaining operational efficiency.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className='flex gap-5 items-center'>
+
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <CheckCircle className="w-6 h-6 text-orange-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Safety Excellence</h3>
+              </div>
               <p className="text-gray-600">
                 Rigorous safety protocols and training programs ensure a safe working environment for all employees.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className='flex gap-5 items-center'>
+
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Award className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Continuous Improvement</h3>
+              <h3 className="text-xl font-semibold mb-3">Improvements</h3>
+              </div>
               <p className="text-gray-600">
                 Regular audits and reviews ensure our processes continuously evolve and improve over time.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className='flex gap-5 items-center'>
+
               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Regulatory Compliance</h3>
+              </div>
               <p className="text-gray-600">
                 Full compliance with all applicable regulations and standards in every market we serve.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className='flex gap-5 items-center'>
+
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                 <CheckCircle className="w-6 h-6 text-indigo-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Customer Focus</h3>
+              </div>
               <p className="text-gray-600">
                 All our quality systems are designed with customer satisfaction and success as the primary objective.
               </p>
