@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Mail, MapPin} from 'lucide-react';
 import Image from "next/image";
@@ -17,14 +18,14 @@ export default function Footer() {
                 width={40}
                 height={40}
               />
-              <h3 className="text-xl font-bold text-green-400">Aminisha Organics LLP</h3>
+              <h3 className="text-lg font-bold text-green-400">Aminisha Organics LLP</h3>
             </div>
             <p className="text-gray-300 text-md leading-relaxed">
               The Aminisha Organics LLP of today is a result of the collective effort of our employees, suppliers, customers and management.
             </p>
             <div className="pt-4">
               <p className="text-sm text-gray-400">Call Anytime</p>
-              <p className="text-lg font-semibold">+91 9428323829</p>
+              <p className="text-lg font-semibold" onClick={() => window.location.href='tel:+919428323829'}>+91 9428323829</p>
             </div>
           </div>
 
@@ -59,7 +60,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Email Address</p>
-                  <p className="text-white">info@aminishaorganics.com</p>
+                  <p className="text-white cursor-pointer" onClick={() => window.location.href='mailto:info@aminishaorganics.com'}>info@aminishaorganics.com</p>
+                  <p className="text-white cursor-pointer" onClick={() => window.location.href='mailto:sales@aminishaorganics.com'}>sales@aminishaorganics.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">

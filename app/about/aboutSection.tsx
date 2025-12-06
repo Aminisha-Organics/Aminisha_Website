@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Phone, Award } from 'lucide-react';
 import Image from "next/image";
@@ -75,7 +76,7 @@ export default function AboutUs() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Call Anytime</p>
-                    <p className="font-semibold text-gray-900">+91 9428323829</p>
+                    <p className="font-semibold text-gray-900 cursor-pointer" onClick={() => window.location.href='tel:+919428323829'}>+91 9428323829</p>
                   </div>
                 </div>
               </div>

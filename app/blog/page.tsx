@@ -111,7 +111,7 @@ export default function PersulfateBlogPage() {
         <section className="mb-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Aminisha Organics?</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Aminisha Organics is a trusted manufacturer and supplier of high-purity APS and SPS in India with global shipping capability. 
+            Aminisha Organics is a trusted manufacturer of high-purity APS and SPS in India with global shipping capability. 
             We supply material with purity greater than 98.5% along with COA, SDS, and batch-wise test reports.
           </p>
 

@@ -31,7 +31,8 @@ const Header: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>info@aminishaorganics.com</span>
+              <div className="cursor-pointer" onClick={() => window.location.href='mailto:info@aminishaorganics.com'}>info@aminishaorganics.com</div>
+              <div className="cursor-pointer" onClick={() => window.location.href='mailto:sales@aminishaorganics.com'}>sales@aminishaorganics.com</div>
             </div>
           </div>
         </div>
@@ -52,7 +53,7 @@ const Header: React.FC = () => {
               />
               <div>
                 <h2 className="text-md font-bold text-green-600">
-                  Aminisha <br></br>Organics
+                  Aminisha Organics
                 </h2>
               </div>
             </Link>
@@ -89,13 +90,18 @@ const Header: React.FC = () => {
                       : ""
                   }`}
                 >
-                  <span>Products</span>
+                  <Link
+                      href="/products"
+                      className="block text-gray-700 hover:text-blue-600 transition-colors"
+                    >
+                      Products
+                    </Link>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {/* for me */}
                 {/* Invisible bridge to cover the gap (same width as menu) */}
                 <div
-                  className="absolute left-0 top-full w-64 h-2"
+                  className="absolute left-0 top-full w-22 h-2"
                   onMouseEnter={() => setIsProductsOpen(true)}
                 />
 
@@ -144,9 +150,9 @@ const Header: React.FC = () => {
             </nav>
 
             {/* Call Anytime Button */}
-            <div className="flex items-center gap-2 text-sm">
+            <div className=" hidden lg:flex items-center gap-2 text-sm">
               <Phone className="w-4 h-4 text-lg" />
-              <span className="text-lg">9428323829</span>
+              <span className="text-lg cursor-pointer" onClick={() => window.location.href='tel:+919428323829'}>+91 9428323829</span>
             </div>
 
             {/* Mobile Menu Button */}
