@@ -88,7 +88,7 @@ export default function HomePage() {
           <div className="backdrop-brightness-55 w-full h-full flex items-center">
             <div className="max-w-6xl mx-auto px-1 py-16 text-center">
               <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-                Ammonium Persulfate & Sodium Persulfate manufacturer & Supplier in India
+                Ammonium Persulfate & Sodium Persulfate manufacturer in India
               </h1>
               <p className="mt-4 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
                 High-purity persulfates for polymers, electronics, water treatment and industrial applications — certified COA, SDS and reliable bulk supply across India.
@@ -144,7 +144,7 @@ export default function HomePage() {
               Overview of Aminisha Organics LLP
             </h2>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Aminisha Organics LLP is a India-based specialty chemical manufacturer and supplier focusing on high-purity
+              Aminisha Organics LLP is a India-based specialty chemical manufacturer focusing on high-purity
               persulfates for industrial use. Our products—Ammonium Persulfate (APS) and Sodium Persulfate (SPS)—
               serve customers in polymer, electronics, textiles, cosmetics and environmental sectors.
             </p>

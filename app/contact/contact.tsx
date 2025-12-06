@@ -241,7 +241,7 @@ const jsonLd = {
                     <Phone className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">+91 9428323829</p>
+                    <p className="font-semibold text-gray-900 cursor-pointer" onClick={() => window.location.href='tel:+919428323829'}>+91 9428323829</p>
                   </div>
                 </div>
                 
@@ -250,7 +250,8 @@ const jsonLd = {
                     <Mail className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">info@aminishaorganics.com</p>
+                    <p className="font-semibold text-gray-900 cursor-pointer" onClick={() => window.location.href='mailto:info@aminishaorganics.com'}>info@aminishaorganics.com</p>
+                    <p className="font-semibold text-gray-900 cursor-pointer" onClick={() => window.location.href='mailto:sales@aminishaorganics.com'}>sales@aminishaorganics.com</p>
                   </div>
                 </div>
               </div>
