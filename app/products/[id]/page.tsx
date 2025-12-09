@@ -28,8 +28,7 @@ function ProductDetail({ params }: PageProps) {
       name: 'Ammonium Persulfate (crystalline)',
       formula: '(NH₄)₂S₂O₈',
       density: '1.98 g/cc',
-      image:
-        'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: '/product-image/APS.png',
       description:
         'Ammonium Persulfate is a white, crystalline, odourless salt used as an initiator for polymerization and as a strong oxidizing agent in many applications.',
       breadcrumb: 'Ammonium Persulfate'
@@ -38,8 +37,7 @@ function ProductDetail({ params }: PageProps) {
       name: 'Sodium Persulfate (crystalline)',
       formula: 'Na₂S₂O₈',
       density: '2.59 g/cc',
-      image:
-        'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+      image: '/product-image/SPS.png',
       description:
         'Sodium Persulfate is a white, crystalline, odourless salt used as an initiator for polymerization and as a strong oxidizing agent in many industries.',
       breadcrumb: 'Sodium Persulfate'

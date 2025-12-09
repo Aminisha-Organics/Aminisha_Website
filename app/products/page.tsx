@@ -133,7 +133,7 @@ export default function Products() {
             {/* Ammonium Persulfate */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                src="/product-image/APS.png"
                 alt="Ammonium Persulfate"
                 className="w-full h-64 object-cover"
                 width={1200}
@@ -157,7 +157,7 @@ export default function Products() {
             {/* Sodium Persulfate */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                src="/product-image/SPS.png"
                 alt="Sodium Persulfate"
                 className="w-full h-64 object-cover"
                 width={1200}
