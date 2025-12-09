@@ -184,7 +184,7 @@ export default function HomePage() {
           <div className="grid gap-8 md:grid-cols-2">
             <article className="bg-white rounded-lg shadow overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"
+                src="/product-image/APS.png"
                 alt="Ammonium Persulfate (APS) - supplier India"
                 className="w-full h-44 object-cover"
                 width={800}
@@ -203,7 +203,7 @@ export default function HomePage() {
 
             <article className="bg-white rounded-lg shadow overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop"
+                src="/product-image/SPS.png"
                 alt="Sodium Persulfate (SPS) - supplier India"
                 className="w-full h-44 object-cover"
                 width={800}
